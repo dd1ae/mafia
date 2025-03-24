@@ -1,11 +1,14 @@
-let tg = window.Telegram.WebApp;
-tg.expand();  // раскрывает WebApp на весь экран
+const tg = window.Telegram.WebApp;
+tg.expand();
 
-let user = tg.initDataUnsafe.user;
-document.getElementById("username").textContent = user.first_name;
-document.getElementById("userphoto").src = user.photo_url;
+const joinBtn = document.getElementById('joinBtn');
+const statusDiv = document.getElementById('status');
 
-document.getElementById("join").addEventListener("click", () => {
-    tg.sendData(JSON.stringify({ action: "join" }));
-    alert("Вы присоединились к игре!");
+joinBtn.addEventListener('click', () => {
+    const user = tg.initDataUnsafe.user;
+    if (user) {
+        statusDiv.innerText = `${user.first_name} присоединился к игре!`;
+    } else {
+        statusDiv.innerText = `Ошибка: пользователь не найден.`;
+    }
 });
