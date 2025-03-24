@@ -3,21 +3,28 @@ const tg = window.Telegram.WebApp;
 tg.ready();
 tg.expand();
 
-// Отладка — выведем initData в консоль
-console.log("✅ initData:", tg.initData);
-console.log("✅ initDataUnsafe:", tg.initDataUnsafe);
-
+// Переменные
 const joinBtn = document.getElementById('joinBtn');
 const statusDiv = document.getElementById('status');
+const playerList = document.getElementById('player-list');
+
+const players = [];
 
 joinBtn.addEventListener('click', () => {
     const user = tg.initDataUnsafe?.user;
 
     if (user && user.first_name) {
-        statusDiv.innerText = `${user.first_name} присоединился к игре!`;
-        statusDiv.style.color = "lime";
+        const alreadyJoined = players.find(p => p.id === user.id);
+        if (!alreadyJoined) {
+            players.push({ id: user.id, name: user.first_name });
+            updatePlayerList();
+            statusDiv.innerText = `${user.first_name} присоединился к игре!`;
+            statusDiv.style.color = "lime";
+        } else {
+            statusDiv.innerText = `${user.first_name}, вы уже в игре!`;
+            statusDiv.style.color = "orange";
+        }
     } else {
-        // Если пользователь не найден
         if (!tg.initData || tg.initData.length === 0) {
             statusDiv.innerText = `❌ Ошибка: Telegram не передал данные пользователя.`;
         } else {
@@ -26,3 +33,12 @@ joinBtn.addEventListener('click', () => {
         statusDiv.style.color = "red";
     }
 });
+
+function updatePlayerList() {
+    playerList.innerHTML = ""; // очистим старый список
+    players.forEach((player, index) => {
+        const li = document.createElement("li");
+        li.innerText = `${index + 1}. ${player.name}`;
+        playerList.appendChild(li);
+    });
+}
