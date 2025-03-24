@@ -1,20 +1,28 @@
 body {
-  background: #222;
-  color: #fff;
-  font-family: sans-serif;
-  text-align: center;
-  padding: 30px;
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
-.avatar {
-  width: 80px;
-  border-radius: 50%;
-  margin: 15px;
+.container {
+    text-align: center;
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #0ff;
 }
 button {
-  padding: 10px 20px;
-  font-size: 18px;
-  background-color: #0088cc;
-  color: white;
-  border: none;
-  border-radius: 8px;
+    background-color: #0ff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #0cc;
 }
