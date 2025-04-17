@@ -1,7 +1,7 @@
 import os
 from telegram.ext import Application, CommandHandler
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("7900197610:AAGArfkfZeEJPOGnm5L9qCdmtp8nj0ZzP9M")
 
 async def start(update, context):
     await update.message.reply_text("Привет! Я работаю через Webhook.")
