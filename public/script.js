@@ -5,7 +5,7 @@ document.getElementById("addBtn").onclick = async () => {
   };
 
   try {
-    const res = await fetch("https://1fed1331-e18b-4717-9002-397cd513ad10-00-2plu6732ele89.kirk.repl.co/add-player", {
+    const res = await fetch("/add-player", { // 👈 работает всегда
       method: "POST",
       headers: {
         "Content-Type": "application/json"
