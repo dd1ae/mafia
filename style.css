@@ -1,28 +1,28 @@
 body {
-    font-family: Arial, sans-serif;
-    background: #121212;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+  font-family: Arial, sans-serif;
+  background: #121212;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 .container {
-    text-align: center;
-    background: #1e1e1e;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #0ff;
+  text-align: center;
+  background: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #0ff;
 }
 button {
-    background-color: #0ff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
+  background-color: #0ff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
 }
 button:hover {
-    background-color: #0cc;
+  background-color: #0cc;
 }
